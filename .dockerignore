@@ -1,7 +1,8 @@
 node_modules
 build
+.git
+.gitignore
 .dockerignore
 Dockerfile
 docker-compose.yml
-.gitignore
-README.me
+README.md

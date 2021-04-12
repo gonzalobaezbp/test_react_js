@@ -1,15 +1,17 @@
-FROM node:lts
-
-WORKDIR /app
+FROM node:14
 
 ENV PATH /app/node_modules/.bin:$PATH
 
-COPY package.json ./
+WORKDIR /app
 
-COPY package-lock.json ./
+COPY . ./
+
+COPY ["package.json", "./"]
+
+COPY ["package-lock.json", "./"]
 
 RUN npm install
 
-COPY . ./
+####EXPOSE 3000
 
 CMD ["npm", "start"]
